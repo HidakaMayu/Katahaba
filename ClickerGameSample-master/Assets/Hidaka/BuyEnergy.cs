@@ -17,7 +17,7 @@ public class BuyEnergy : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return))
         {
             hako = gameObject.transform.localScale;
-            hako.x += 0.01f;
+            hako.x += 0.005f;
             gameObject.transform.localScale = hako;
         }
     }
