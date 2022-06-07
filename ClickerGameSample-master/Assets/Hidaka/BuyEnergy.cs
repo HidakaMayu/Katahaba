@@ -12,6 +12,7 @@ public class BuyEnergy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        hako = gameObject.transform.localScale;
     }
 
     // Update is called once per frame
@@ -19,10 +20,10 @@ public class BuyEnergy : MonoBehaviour
     {
         if (Input.anyKeyDown)
         {
-            hako = gameObject.transform.localScale;
             hako.x += katahaba;
-            gameObject.transform.localScale = hako;
+            
         }
+        gameObject.transform.localScale = hako;
         text.text = $"肩幅：{hako.x}m（状態:棒）\n身長: {hako.y}m";
     }
 }

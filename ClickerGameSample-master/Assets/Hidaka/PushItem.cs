@@ -4,23 +4,17 @@ using UnityEngine;
 
 public class PushItem : MonoBehaviour
 {
-    public float tap = 0f;
+    [SerializeField] float tap = 0f;
     [SerializeField] float upPoints;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    [SerializeField] float buy;
     void Update()
     {
-        BuyEnergy.hako.x += (upPoints * tap);
+        BuyEnergy.hako.x += (upPoints * tap); //ëùâ¡
     }
     public void OnClick()
     {
 
-        BuyEnergy.hako.x -= 0.05f * tap;
+        BuyEnergy.hako.x -= buy * tap; //âøäi
         tap += 1;
     }
 }
