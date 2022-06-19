@@ -5,22 +5,25 @@ using UnityEngine.UI;
 
 public class Name : MonoBehaviour
 {
-    [SerializeField] InputField inputField = null;
     [SerializeField] Text text;
+    InputField inputField;
     void Start()
     {
-        inputField = inputField.GetComponent<InputField>();
+        inputField = this.GetComponent<InputField>();
         text = text.GetComponent<Text>();
+        
     }
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Return))
+        if(inputField != null)
         {
-            Debug.Log(5);
-            text.text = inputField.text;
-            Destroy(inputField);
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                text.text = inputField.text;
+                Destroy(this.gameObject);
+                inputField = null;
+            }
         }
-        
     }
 }
