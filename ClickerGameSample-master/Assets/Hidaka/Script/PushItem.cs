@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PushItem : MonoBehaviour
+public class PushItem : TapCount
 {
     [SerializeField] float upPoints;
     [SerializeField] float buy;
-    [SerializeField] Text text;
-    [SerializeField] Text prctx;
-    [SerializeField] string work;
+    [SerializeField] Text text;　//使用数
+    [SerializeField] Text prctx; //価格
+    [SerializeField] string work; //内容
 
-    float tap = 0f;
+    [SerializeField] float tap = 0f; //デバック用
     float price;
     void Start()
     {
@@ -25,6 +25,7 @@ public class PushItem : MonoBehaviour
         if (BuyEnergy.hako.x > buy && BuyEnergy.hako.x > price) GetComponent<Button>().interactable = true;
         else GetComponent<Button>().interactable = false;
 
+        //表示部分
         if (price == 0) prctx.text = $"{work}\n{buy}cm";
         else prctx.text = $"{work}\n{price}cm";
         BuyEnergy.hako.x += (upPoints * tap); //増加
