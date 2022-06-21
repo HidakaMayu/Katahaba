@@ -46,6 +46,6 @@ public class Ivent : TapCount
     public void Kourin()
     {
         this.gameObject.SetActive(true);
-        Invoke(nameof(OnDes), 2.0f); //ƒŒƒNƒgtransform
+        Invoke(nameof(OnDes), 2.0f); 
     }
 }
